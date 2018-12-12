@@ -1,0 +1,30 @@
+extends ../includes/layout
+
+block content  
+  .container
+    h1.main-title 사용자 목록
+    
+    table.table.table-hover
+      thead
+        tr
+          th 이름
+          th 이메일
+          th 계정
+          th 생성 날짜
+          th 관리자
+          th
+      tbody
+        each user in users
+          tr
+            td
+              a(href=`/users/${user._id}`)= user.name
+            td= user.email
+            td= user.username
+            td= moment(user.createdAt).format('YYYY-MM-DD HH:mm:ss')
+            td= (user.isAdmin === 1 ? "O" : "")
+            td
+              a.btn.btn-sm.btn-outline-secondary(href=`/admin/users/${user._id}/edit`) 
+                | #[i.fa.fa-pencil] 수정
+              | 
+              a.btn.btn-sm.btn-outline-danger(href=`/admin/users/${user._id}?_method=DELETE`)
+                | #[i.fa.fa-trash] 삭제 

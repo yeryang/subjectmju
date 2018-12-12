@@ -1,0 +1,12 @@
+extends ../includes/layout
+
+block content
+  .container
+    h1.main-title 새로운 공모전 등록
+	
+    .main-edit.main-edit-center
+      form(action="/project", method="POST")
+        include _form
+        button.btn.btn-outline-primary(type="submit") 공모전 등록
+
+    

@@ -1,0 +1,27 @@
+extends includes/layout
+
+block content  
+    .row.main
+    .panel-heading
+        .panel-title.text-center
+        h2.title 로그인
+        hr
+    .main-login.main-center
+        form.form-horizontal(method='post', action='/users/signin', enctype='utf-8')
+            label.cols-sm-2.control-label(for='username') 아이디
+            .cols-sm-10
+            .input-group
+                span.input-group-addon
+                i.fa.fa-users.fa(aria-hidden='true')
+                input#username.form-control(type='text', name='username', placeholder='Enter your Username')
+            .form-group
+                label.cols-sm-2.control-label(for='password') 비밀번호
+                .cols-sm-10
+                .input-group
+                    span.input-group-addon
+                    i.fa.fa-lock.fa-lg(aria-hidden='true')
+                    input#password.form-control(type='password', name='password', placeholder='Enter your Password') 
+            .form-group
+                button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit') 로그인
+            .login-register
+                a(href='./signup') 가입

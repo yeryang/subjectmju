@@ -1,0 +1,8 @@
+extends ../includes/layout
+
+block content
+  .container
+    h1.main-title Edit Question
+    form(action=`/project/${project.id}/edit`, method="POST")
+      include _form
+      button.btn.btn-outline-primary(type="submit") 공모전 수정

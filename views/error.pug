@@ -1,0 +1,14 @@
+extends includes/layout
+
+block content 
+  .page-wrap.d-flex.flex-row.align-items-center
+  .container
+    .row.justify-content-center
+      .col-md-12.text-center
+        span.display-1.d-block
+          h1= message
+        .mb-4.lead 
+          h2= error.status
+          pre #{error.stack}
+        a.btn.btn-link(href='/') Back to Home
+

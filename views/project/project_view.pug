@@ -1,0 +1,36 @@
+extends ../includes/layout
+
+
+block content
+  .container.contest-detail 
+    h1.main-title= project.title
+
+    .project.show
+      include _project 
+      .buttons 
+        a.btn.btn-outline-secondary(href=`/project/${project._id}/edit`) 수정
+        | 
+        a.btn.btn-outline-danger.delete-btn(href="#", data-url=`/project/${project._id}/delete`) 삭제
+      
+    if project.numAnswers > 0
+      hr
+      h3 #{project.numAnswers} Answer(s)
+      .comments.show
+        each comment in comments
+          include _comment
+    
+    form(action=`/project/${project.id}/comments`, method='POST')
+      .form-group
+        label(for='comment') 댓글
+        textarea.form-control(name="content", rows="5")
+      button.btn.btn-primary(type="submit") 댓글 달기
+
+  script.
+    $(function() {
+      $('.delete-btn').click(function() {
+        if (confirm('정말로 삭제하시겠습니까.')) {
+          location = $(this).data('url');
+        }
+        return false;
+      });
+    });

@@ -1,0 +1,21 @@
+.form-group
+  label(for="title") 제목
+  input.form-control(type="text", name="title", placeholder="제목", value=project.title)
+.form-group
+  label(for="content") 내용
+  textarea.form-control(name="content", rows="5")= project.content
+.form-group
+  label(for="category") 분야
+  input.form-control(type="text", name="category", placeholder="공모전 분야", value=project.category)
+.form-group
+  label(for="target") 응시대상
+  input.form-control(type="text", name="target", placeholder="응시 대상자", value=project.target)
+.form-group
+  label(for="endDate") 접수기간
+  input.form-control(type="text", name="endDate", placeholder="접수 가능 기간", value=project.endDate)
+.form-group
+  label(for="manager") 공모전 담당자
+  input.form-control(type="text", name="manager", placeholder="공모전 담당자", value=project.manager)
+.form-group
+  label(for="contact") 연락처
+  input.form-control(type="text", name="contact", placeholder="연락처", value=project.contact)

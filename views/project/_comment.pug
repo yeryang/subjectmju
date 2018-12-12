@@ -1,0 +1,13 @@
+.answer.card
+  .numbers.like-badge
+    .number 
+  .card-body
+    .content= comment.content
+  .row.card-body
+    .col-sm 
+    .col-sm.text-right
+      .author
+        | Date: #{moment(comment.createdAt).format('YYYY-MM-DD')}
+        if comment.author
+          | <br>
+          | 작성자: #{comment.author.name}

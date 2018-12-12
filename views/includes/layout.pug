@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    block header
+      include header
+  body
+    block topnav
+      include topnav
+    .container 
+      //!= messages()
+      block content
+    footer
+      row
+        br
+        br
+        center 
+      block footer
+        include footer 

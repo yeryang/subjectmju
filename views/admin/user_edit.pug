@@ -1,0 +1,22 @@
+extends ../includes/layout
+
+block content 
+  .container
+    h1.main-title 사용자 정보 변경
+    form(action=`/admin/users/${user._id}?_method=PUT`, method='POST')
+      .form-group
+        label(for='name') 이름
+        input.form-control(type='text', id='name', name='name', placeholder='Your name', value=user.name)
+      .form-group
+        label(for='email') 이메일
+        input.form-control(type='email', id='email', name='email', placeholder='Email', value=user.email) 
+      .form-group
+        label(for='password') 새로운 패스워드
+        input.form-control(type='password', id='password', name='password', placeholder='Password')
+      .form-group
+        label(for='isAdmin') 관리자  
+        input(type='checkbox', id='isAdmin', name='isAdmin', aria-label='Checkbox for following text input', checked=(user.isAdmin === 1 ? true : false) ) 
+      a.btn.btn-outline-secondary(href='javascript:window.history.back();') 뒤로 
+       
+
+      button.btn.btn-primary(type='submit') 업데이트
