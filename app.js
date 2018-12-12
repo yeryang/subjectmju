@@ -16,8 +16,6 @@ var users               = require('./routes/users');
 var admin               = require('./routes/admin');
 var project               = require('./routes/project');
 
- 
-
 
 var app = express(); 
 // view engine setup
@@ -86,7 +84,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
-app.listen(3001);
-
+ 
 module.exports = app;
